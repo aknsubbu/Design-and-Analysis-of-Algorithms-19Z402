@@ -33,3 +33,21 @@ Merge sort is an efficient, stable, comparison-based, divide and conquer sorting
 - [Wikipedia](https://en.wikipedia.org/wiki/Merge_sort)
 - [GeeksforGeeks](https://www.geeksforgeeks.org/merge-sort/)
 
+
+
+## Convex Hull
+
+### Description
+
+The convex hull of a set of points is the smallest convex polygon that contains all the points of the set. It is a fundamental problem in computational geometry.
+
+### Complexity
+
+- **Time complexity**: O(n log n)
+- **Space complexity**: O(n)
+
+### References
+
+- [Wikipedia](https://en.wikipedia.org/wiki/Convex_hull)
+- [GeeksforGeeks](https://www.geeksforgeeks.org/convex-hull-set-1-jarviss-algorithm-or-wrapping/)
+
