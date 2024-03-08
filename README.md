@@ -52,3 +52,13 @@ Divide and Conquer Algorithm breaks a problem into subproblems that are similar 
 ___
 Merge Sort is based on the divide and conquer approach. It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves. The merge() function is used for merging two halves. The merge(arr, l, m, r) is a key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.
 
+Time Analysis:   
+**Merge Sort Function**    
+- Best Case: O(n log n)
+- Average Case: O(n log n)
+- Worst Case: O(n log n)
+
+**Merge Function**
+- Best Case: O(n)
+- Average Case: O(n)
+- Worst Case: O(n)

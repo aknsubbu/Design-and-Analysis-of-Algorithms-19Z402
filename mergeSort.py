@@ -1,32 +1,24 @@
-#merge sort
+def mergeSort(array:list) -> list:
 
-def mergeSort(arr):
-    if len(arr)>1:
-        mid=len(arr)//2
-        left=arr[:mid]
-        right=arr[mid:]
-        mergeSort(left)
-        mergeSort(right)
-        i=0
-        j=0
-        k=0
-        while i<len(left) and j<len(right):
-            if left[i]<right[j]:
-                arr[k]=left[i]
-                i+=1
-            else:
-                arr[k]=right[j]
-                j+=1
-            k+=1
-        while i<len(left):
-            arr[k]=left[i]
-            i+=1
-            k+=1
-        while j<len(right):
-            arr[k]=right[j]
-            j+=1
-            k+=1
-    return arr
+    def merge(left:list, right:list) -> list:
+        result = []
+        while left and right:
+            result.append(left.pop(0) if left[0] <= right[0] else right.pop(0))
+        # the .extend function will add the remaining elements of the non-empty list to the result
+        result.extend(left)
+        result.extend(right)
+        return result
+    
+    if len(array) <= 1:
+        return array
+    
+    midIndex = len(array) // 2
+    left = mergeSort(array[:midIndex])
+    right = mergeSort(array[midIndex:])
+    return merge(left, right)
 
-arr=[10,1,2,14,6,8,20,11]
-print(mergeSort(arr))
+
+array = [3, 5, 1, 2, 4, 6, 7, 8, 9, 0]
+print('The original list: ',array)
+print('\n The sorted list:')
+print(mergeSort(array))
