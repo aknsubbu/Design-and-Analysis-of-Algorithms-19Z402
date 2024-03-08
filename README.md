@@ -1,53 +1,54 @@
 # Design and Analysis of Algorithms
 
-## Quick Sort
+## This repository contains the code for the assignments of the course Design and Analysis of Algorithms (19Z402) from PSG College of Technology, Coimbatore.
 
-### Description
+## Syllabus
+**DIVIDE AND CONQUER** : 
+- Introduction to Algorithm Design techniques 
+- Divide and Conquer Methodology 
+- Solving recurrence relations 
+- Masters Theorem 
+- Finding Maximum and Minimum Element 
+- Quick sort 
+- Merge sort 
+- Convex Hull   
 
-Quick sort is a divide and conquer algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively. This can be done in-place, requiring small additional amounts of memory to perform the sorting.
+**GREEDY METHOD**: 
+- Greedy Strategy
+- Knapsack Problem 
+- Minimum Spanning Trees
+- Single Source Shortest Path Method 
+- Huffman Trees    
 
-### Complexity
+**DYNAMIC PROGRAMMING** : 
+- Principle of Optimality 
+- Knapsack Problem 
+- All Pairs Shortest Path 
+- Optimal Binary Search Tree 
+- Multistage Graphs   
+  
 
-- **Time complexity**: O(n log n) average, O(n^2) worst case
-- **Space complexity**: O(log n)
+**BACKTRACKING**: 
+- State Space Tree 
+- Knapsack Problem 
+- The Eight Queens Problem 
+- Sum of subsets 
+- Graph Coloring    
 
-### References
-
-- [Wikipedia](https://en.wikipedia.org/wiki/Quicksort)
-- [GeeksforGeeks](https://www.geeksforgeeks.org/quick-sort/)
-
-
-## Merge Sort
-
-### Description
-
-Merge sort is an efficient, stable, comparison-based, divide and conquer sorting algorithm. Most implementations produce a stable sort, meaning that the implementation preserves the input order of equal elements in the sorted output. Merge sort is a divide and conquer algorithm that was invented by John von Neumann in 1945.
-
-### Complexity
-
-- **Time complexity**: O(n log n)
-- **Space complexity**: O(n)
-
-### References
-
-- [Wikipedia](https://en.wikipedia.org/wiki/Merge_sort)
-- [GeeksforGeeks](https://www.geeksforgeeks.org/merge-sort/)
-
+**BRANCH AND BOUND** : 
+- Bounding Functions 
+- 0/1 Knapsack Problem 
+- Traveling SalesPerson Problem 
+- Assignment Problem
 
 
-## Convex Hull
+## Divide and Conquer Algorithm   
+Divide and Conquer Algorithm breaks a problem into subproblems that are similar to the original problem, recursively solves the subproblems. Each recursion of the algorithm makes the problem smaller until it reaches a base case. The algorithm is split into three parts :
+- Divide: This divides each problem into smaller problems allowing us to make the number of elements to be calcuated on smaller.
+- Conquer: This allows us to perform the required operation on the elements and solve the subproblems by addressing the base case. 
+- Combine: This is where we recombine all the parts of the problem to find our final result. 
 
-### Description
-
-The convex hull of a set of points is the smallest convex polygon that contains all the points of the set. It is a fundamental problem in computational geometry.
-
-### Complexity
-
-- **Time complexity**: O(n log n)
-- **Space complexity**: O(n)
-
-### References
-
-- [Wikipedia](https://en.wikipedia.org/wiki/Convex_hull)
-- [GeeksforGeeks](https://www.geeksforgeeks.org/convex-hull-set-1-jarviss-algorithm-or-wrapping/)
+### Merge Sort 
+___
+Merge Sort is based on the divide and conquer approach. It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves. The merge() function is used for merging two halves. The merge(arr, l, m, r) is a key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.
 
