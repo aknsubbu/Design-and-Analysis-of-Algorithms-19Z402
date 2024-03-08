@@ -1,68 +1,43 @@
 import random
 import array
 
+def swap(a:int,b:int):
+    return b,a
 
-def swap(arr, i, j):
-    arr[i], arr[j] = arr[j], arr[i]
-
-
-
-def quicksort(arr):
-    if len (arr)<=1:
-        return arr
+def quicksort(array:list[int], low:int, high:int) -> list[int]:
+    if low == high:
+        return array[low]
     
-    pivotFront=arr[0]
-    pivotLast=arr[-1]
-    pivotRandom=arr[random.randint(0,len(arr)-1)]
-    pivotMedian = arr[len(arr)//2]
+    pivot : int = low
+    left : int = low + 1
+    right : int = high
 
-    i=arr.index(pivotFront)
-    j=len(arr)-1
-    i+=1
+    while left < right:
+        while array[pivot] > array[left]:
+            left += 1
 
-    while i<j:
-        if arr[i]>pivotFront:
-            swap(arr,i,j)
-            j-=1
-        else:
-            i+=1
-    if arr[i]>pivotFront:
-        i-=1
-    swap(arr,0,i)
-    return quicksort(arr[:i])+[arr[i]]+quicksort(arr[i+1:])
+        while array[pivot] < array[right]:
+            right -= 1
 
+        if not left<right:
+            break
+        print('Swapping:',array[left],array[right])
+        array[left], array[right] = swap(array[left], array[right])
+    
+    print('Swapping:',array[pivot],array[right])
+    array[pivot], array[right] = swap(array[pivot], array[right])
 
-#example usage 
-arr=[10,1,2,14,6,8,20,11]
-print(quicksort(arr))
+    i = j = []
 
+    if low <= right-1:
+        i = quicksort(array, low, right-1)
 
-def arrayQuicksort(arr):
-    if len(arr)<=1:
-        return arr
-    pivotFront=arr[0]
-    pivotLast=arr[-1]
-    pivotRandom=arr[random.randint(0,len(arr)-1)]
-    pivotMedian = arr[len(arr)//2]
+    if right+1 <= high:
+        j = quicksort(array, right+1, high)
 
-    i=arr.index(pivotFront)
-    j=len(arr)-1
-    i+=1
+    return i + [array[right]] + j
 
-    while i<j:
-        if arr[i]>pivotFront:
-            swap(arr,i,j)
-            j-=1
-        else:
-            i+=1
-    if arr[i]>pivotFront:
-        i-=1
-    swap(arr,0,i)
-    return arrayQuicksort(arr[:i])+array.array('i',[arr[i]])+arrayQuicksort(arr[i+1:])
-
-
-#usage
-arr=array.array('i',[10,1,2,14,6,8,20,11])
-
-print(arrayQuicksort(arr))
-
+array = [3, 5, 1, 2, 4, 6, 7, 8, 9, 0]
+print('The original list: ',array)
+print('\n The sorted list:')
+print(quicksort(array,0,len(array)-1))
