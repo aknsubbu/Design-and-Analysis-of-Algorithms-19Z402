@@ -98,3 +98,51 @@ The algorithm is based on the divide and conquer approach.
 - For the remaniang elements, if the angle is counter-clockwise we insert the point into the stack.
 - If the angle is clockwise, we pop the top element from the stack and insert the point into the stack.
 - The stack contains the convex hull of the points.
+
+
+Useful Youtube Video:
+[Convex Hull Algorithm by MIT OCW](https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-2-divide-conquer-convex-hull-median-finding/)
+
+## Greedy Algorithm
+Greedy Algorithm is a technique where we always pick the ___**local optima**___ in all the steps to find the global optima.   
+If a problem can be solved by greedy algorithm then we can find that the problem has the following properties:
+1. Optimal Substructure: The problem has the property that the optimal solution can be constructed from the optimal solutions of its subproblems.
+2. Greedy Choice Property: The problem has the property that a global optimal solution can be arrived at by selecting a local optimal solution.
+
+
+### Minimum Spanning Tree
+___
+Minimum Spanning Tree is a tree that connects all the vertices together without any cycles and with the minimum possible total edge weight.
+The algorithm is based on the greedy approach. We use the technique to find the paths in the tree to find the spanning tree (contaning all the vertices) with the minimum weight.    
+The problem is as follows:   
+1. You are given an undirected graph with vertices and edges. Each edge has a weight assigned to it. 
+2. You have to find a graph within the graph that connects all the vertices using the least possible weight.
+
+The objective is to find the algorithm to find MST with complexity nearest to linear time.    
+
+Optimal Substructure for MST: **LEMMA 1**
+1. if e={u,v} is an edge of some MST. 
+    - We can contract the edge e by merging u and v into a single vertex.
+    - All common connected edges to u and v are connected to the new vertex. They will now become a single edge to the connnected vertex. Out of the edges to the two vertices, we will select the edge with the minimum weight.
+    - if T' is the MST of graph G obtained by contracting e, then     
+    ```The graph T' U {e} is an MST of G.```    
+
+     
+
+The possible approaches are:    
+1. **Brute Force Computation**: This is not feasible as the number of possible spanning trees is very large. This will have a time complexity of O(n!).
+2. **Dynamic Programming Approach**:    
+In a graph 'G' with 'n' vertices, there are 2^n-2 spanning trees   
+The steps are as follows: 
+    - Guess edge 'e' in a MST
+    - Contract edge 'e'
+    - Recurse on the contracted graph
+    - Uncontract edge 'e'
+    - Add 'e' to the MST
+    - Return the MST with the minimum weight. 
+3. **Prim's Algorithm**: In prim's algorithm we start out with a simple cut which is a single vertex. We can take the minimum edge from that cut and add it to the  spanning tree and repeat it. We can also pick the edge with the min weight to start (Minimum Cause Vertex). 
+4. **Kruskal's Algorithm**: In kruskal's algorithm, we always pick the two edges with the least weight. We then start picking edges with the weight increasing slowly and we check each see if they make a cycle. If they do then we don't pick the edge. 
+
+
+Useful Youtube Video:
+[Minimum Spanning Tree by MIT OCW](https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-12-greedy-algorithms-minimum-spanning-tree/)
