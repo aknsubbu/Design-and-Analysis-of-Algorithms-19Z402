@@ -1,59 +1,14 @@
-import matplotlib.pyplot as plt
+import math
 
-# Function to find the cross product of three points
-def cross_product(p1, p2, p3):
-    return (p2[0] - p1[0]) * (p3[1] - p1[1]) - (p2[1] - p1[1]) * (p3[0] - p1[0])
+def polar_angle(p0, p):
+    dy = p[1] - p0[1]
+    dx = p[0] - p0[0]
+    return math.atan2(dy, dx)
 
-# Function to find the points on the convex hull using the divide and conquer algorithm
-def convex_hull(points):
-    def divide_and_conquer(points):
-        if len(points) <= 3:
-            return points
-        
-        # Sort the points by x-coordinate
-        points.sort()
-        
-        # Divide the set of points into two halves
-        left_half = divide_and_conquer(points[:len(points)//2])
-        right_half = divide_and_conquer(points[len(points)//2:])
-        
-        return merge_convex_hulls(left_half, right_half)
-    
-    def merge_convex_hulls(left_half, right_half):
-        def get_tangent(points1, points2, direction):
-            start = points1[-1]
-            while True:
-                best_angle = None
-                for point in points1:
-                    while cross_product(start, point, points2[direction]) < 0:
-                        direction = (direction + 1) % len(points2)
-                    angle = cross_product(start, point, points2[direction])
-                    if best_angle is None or angle < best_angle:
-                        best_angle = angle
-                        best_point = point
-                if best_point == points1[-1]:
-                    return best_point
-                points1 = points1[:-1]
-                start = best_point
-            
-        # Removed unused variables upper_tangent and lower_tangent
-        get_tangent(left_half, right_half, 0)
-        get_tangent(right_half, left_half, -1)
-        
-        return left_half + right_half[1:-1]
-    
-    return divide_and_conquer(points)
+def dist(p0, p):
+    return math.sqrt((p[0] - p0[0])**2 + (p[1] - p0[1])**2)
 
-# Example usage:
-points = [(0, 3), (1, 1), (2, 2), (4, 4), (0, 0), (1, 2), (3, 1), (3, 3)]
-convex_hull_points = convex_hull(points)
 
-# Plotting the points and convex hull
-x, y = zip(*points)
-hull_x, hull_y = zip(*convex_hull_points)
-plt.plot(x, y, 'ro')
-plt.plot(hull_x, hull_y, 'g-')
-plt.xlabel('X')
-plt.ylabel('Y')
-plt.title('Convex Hull using Divide and Conquer')
-plt.show()
+def graham_scan(points:list)->list:
+    p0=min(points,key=lambda p:(p[1],p[0]))
+    points.sort(key=lambda p:(polar_angle(p0,p),dist(p0,p)))
