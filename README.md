@@ -14,9 +14,9 @@
 - [Convex Hull](#convex-hull)   
 
 **GREEDY METHOD**: 
-- Greedy Strategy
+- [Greedy Strategy](#greedy-algorithm)
 - Knapsack Problem 
-- Minimum Spanning Trees
+- [Minimum Spanning Tree](#minimum-spanning-tree)
 - Single Source Shortest Path Method 
 - Huffman Trees    
 
