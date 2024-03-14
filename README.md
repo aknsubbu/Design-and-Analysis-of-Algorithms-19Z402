@@ -146,3 +146,32 @@ The steps are as follows:
 
 Useful Youtube Video:
 [Minimum Spanning Tree by MIT OCW](https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-12-greedy-algorithms-minimum-spanning-tree/)
+
+### Huffman Trees
+___
+Huffman Trees are used to compress data. The algorithm is based on the greedy approach. The algorithm is as follows:
+1. We have a set of characters and their frequencies.
+2. We have to find the binary code for each character such that the total length of the code is minimized.
+
+The steps are as follows:
+1. We have to sort the characters based on their frequency.
+2. We have to pick the two characters with the least frequency and create a new node with the sum of the frequencies of the two characters.
+3. We have to repeat the process until we have only one node left.
+
+The Huffman Tree is a binary tree with the following properties:
+1. The characters are stored in the leaf nodes.
+2. The characters are stored in the internal nodes.
+
+The Huffman Tree is used to find the binary code for each character. The binary code is found by traversing the tree and assigning 0 for the left edge and 1 for the right edge.
+
+The Huffman Tree is used to compress data. The binary code for each character is found using the Huffman Tree
+
+Time Analysis:
+- Best Case: O(n log n)
+- Average Case: O(n log n)
+- Worst Case: O(n log n)
+
+
+
+Useful Youtube Video:
+[Huffman Trees by Abdul Bari](https://www.youtube.com/watch?v=co4_ahEDCho)
