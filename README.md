@@ -20,7 +20,7 @@
 - Single Source Shortest Path Method 
 - Huffman Trees    
 
-**DYNAMIC PROGRAMMING** : 
+[**DYNAMIC PROGRAMMING**](/Dynamic%20Programming/README.MD) : 
 - Principle of Optimality 
 - Knapsack Problem 
 - All Pairs Shortest Path 
@@ -28,7 +28,7 @@
 - Multistage Graphs   
   
 
-**BACKTRACKING**: 
+[**BACKTRACKING**](/Backtracking/README.MD): 
 - State Space Tree 
 - Knapsack Problem 
 - The Eight Queens Problem 
