@@ -2,6 +2,18 @@
 
 Dynamic Programming is a method for solving a complex problem by breaking it down into simpler subproblems. It is applicable to problems exhibiting the properties of overlapping subproblems and optimal substructure.
 
+## Contents
+
+- [Memoization](#memoization)
+- [Litmus Test for Dynamic Programming](#litmus-test-for-dynamic-programming)
+- [Bellman's Principle of Optimality](#bellmans-principle-of-optimality)
+- [Steps to solve a Dynamic Programming Problem](#steps-to-solve-a-dynamic-programming-problem)
+- [Multi-Stage Graphs](#multi-stage-graphs)
+- [All Pairs Shortest Path](#all-pairs-shortest-path)
+- [Bellman Ford Algorithm](#bellman-ford-algorithm)
+- [Optimal Binary Search Tree](#optimal-binary-search-tree)
+
+
 ## Memoization
 
 Memoization is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again.

@@ -4,6 +4,15 @@ This invloves a systematic search for a solution to a problem. It is a class of 
 
 Follows Depth First Search (DFS) approach to solve the problem. 
 
+## Contents
+
+- [State Space Tree](#state-space-tree)
+- [N-Queens Problem](#n-queens-problem)
+- [Graph Coloring](#graph-coloring)
+- [Sum of Subsets](#sum-of-subsets)
+
+
+
 We use a State Space Tree to solve the problem. The tree is a representation of all the possible solutions to the problem. The tree has the following properties:
 - The root node represents the initial state of the problem.
 - The branches represent the possible moves from the current state.
