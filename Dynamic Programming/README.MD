@@ -106,7 +106,7 @@ The problem is to find the shortest path between all pairs of vertices in a grap
 The Floyd-Warshall algorithm is used to find the shortest path between all pairs of vertices in a weighted graph. It is used to handle negative edge weights.
 
 Algorithm: -
-```
+```c
     int dist[V][V], i, j, k;
     //dist [v][v] is the graph
     // V is the number of vertices
@@ -119,7 +119,7 @@ Algorithm: -
         }
     }
 
-    //we iterate over all the vertices and find the shortest path
+    // we iterate over all the vertices and find the shortest path
     for (k = 0; k < V; k++) {
         for (i = 0; i < V; i++) {
             for (j = 0; j < V; j++) {
@@ -152,7 +152,7 @@ The Optimal Binary Search Tree problem can be solved using dynamic programming. 
 5. Solve the original problem: Construct an optimal solution from the computed information.
 
 Algorithm: -
-```
+```c
     int n = keys.length;
     int dp[n][n];
     for (int i = 0; i < n; i++) {
