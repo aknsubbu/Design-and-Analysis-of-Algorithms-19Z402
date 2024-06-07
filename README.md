@@ -18,7 +18,7 @@
 - Knapsack Problem 
 - [Minimum Spanning Tree](#minimum-spanning-tree)
 - Single Source Shortest Path Method 
-- Huffman Trees    
+- [Huffman Trees](/Greedy%20Method/Huffman%20Tree.py)   
 
 [**DYNAMIC PROGRAMMING**](/Dynamic%20Programming/README.MD) : 
 - Principle of Optimality 
@@ -30,15 +30,15 @@
 
 [**BACKTRACKING**](/Backtracking/README.MD): 
 - State Space Tree 
-- Knapsack Problem 
-- The Eight Queens Problem 
-- Sum of subsets 
+- [Knapsack Problem using Backtracking](/Backtracking/knapsackBacktracking.py)
+- [The Eight Queens Problem](/Backtracking/nQueens.py) 
+- [Sum of subsets Problem](/Backtracking/sumOfSubsets.py)   
 - Graph Coloring    
 
 **BRANCH AND BOUND** : 
 - Bounding Functions 
 - 0/1 Knapsack Problem 
-- Traveling SalesPerson Problem 
+- [Traveling SalesPerson Problem](/Branch%20and%20Bound/travellingSalesmanProblem.md) 
 - Assignment Problem
 
 
